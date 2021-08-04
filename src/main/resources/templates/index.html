@@ -1,7 +1,27 @@
-<html>
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" 
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<title>EventosApp</title>
+</head>
 
 <body>
-<h2>Olá</h2>
+	<h1>Lista de Eventos</h1>
+	<h3><a href="cadastrarEvento">Cadastrar Evento</h3>
+
+	<div th:each=" evento : ${eventos}"> <!--para cada evento, vou pegar do obj que vamos mandar para view evento ${eventos}-->
+		<div class="row">
+			<!--Vamos mostrar abaixo os dados do evento dentro de um span-->
+			<p><span th:text="${evento.nome}"></span></p>
+			<p><span th:text="${evento.local}"></span></p>
+			<p><span th:text="${evento.data}"></span></p>
+			<p><span th:text="${evento.horario}"></span></p>
+			
+		</div>
+	
+	</div>
 </body>
+
 
 </html>
